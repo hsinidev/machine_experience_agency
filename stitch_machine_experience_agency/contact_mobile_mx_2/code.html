@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MX // CORE - INITIATE_COMMUNICATION</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #000000;
+            color: #e5e2e1;
+            cursor: crosshair;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-bottom-color: #ffffff !important;
+            box-shadow: 0 4px 12px -2px rgba(255, 255, 255, 0.1);
+        }
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#474747",
+                    "primary-container": "#000000",
+                    "on-tertiary": "#303030",
+                    "primary-fixed": "#e2e2e2",
+                    "on-tertiary-container": "#757575",
+                    "surface-bright": "#393939",
+                    "surface-container-high": "#2a2a2a",
+                    "secondary-container": "#454747",
+                    "secondary-fixed": "#e2e2e2",
+                    "inverse-primary": "#5e5e5e",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-primary-container": "#757575",
+                    "on-secondary": "#2f3131",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-error": "#690005",
+                    "inverse-surface": "#e5e2e1",
+                    "on-secondary-container": "#b4b5b5",
+                    "tertiary-container": "#000000",
+                    "on-primary-fixed": "#1b1b1b",
+                    "on-error-container": "#ffdad6",
+                    "surface-tint": "#c6c6c6",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-surface": "#e5e2e1",
+                    "surface-variant": "#353535",
+                    "primary": "#c6c6c6",
+                    "outline": "#988e90",
+                    "on-primary": "#303030",
+                    "tertiary": "#c6c6c6",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "surface-container": "#20201f",
+                    "error-container": "#93000a",
+                    "surface-container-highest": "#353535",
+                    "inverse-on-surface": "#313030",
+                    "on-secondary-fixed-variant": "#454747",
+                    "on-background": "#e5e2e1",
+                    "surface-container-low": "#1c1b1b",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "error": "#ffb4ab",
+                    "surface-dim": "#131313",
+                    "outline-variant": "#4c4546",
+                    "secondary": "#c6c6c7",
+                    "on-tertiary-fixed": "#1b1b1b",
+                    "on-primary-fixed-variant": "#474747",
+                    "background": "#131313",
+                    "surface": "#131313",
+                    "on-surface-variant": "#cfc4c5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "margin-page": "64px",
+                    "gutter": "24px",
+                    "section-gap": "160px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "mono-technical": ["Space Grotesk"],
+                    "label-caps": ["Space Grotesk"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["15px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "mono-technical": ["13px", {"lineHeight": "1.4", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display": ["80px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-black text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/10 flex justify-between items-center w-full px-6 h-16">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-white" data-icon="terminal">terminal</span>
+<span class="font-inter font-black tracking-[0.2em] text-white">MX // CORE</span>
+</div>
+<span class="material-symbols-outlined text-white" data-icon="sensors">sensors</span>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-lg mx-auto">
+<!-- Hero Section -->
+<section class="mb-12">
+<div class="mb-4 inline-block px-2 py-1 border border-white/20">
+<span class="font-label-caps text-label-caps text-white font-bold">[ SYSTEM_READY ]</span>
+</div>
+<h1 class="font-display text-[42px] leading-none tracking-tighter uppercase text-white mb-8 font-black">
+                INITIATE_<br/>COMMUNICATION
+            </h1>
+<div class="h-[1px] w-full bg-gradient-to-r from-white/40 to-transparent"></div>
+</section>
+<!-- Form Interface -->
+<section class="space-y-10">
+<div class="space-y-8">
+<!-- Full Name Field -->
+<div class="group">
+<label class="font-label-caps text-label-caps text-on-primary-container block mb-4 uppercase font-bold font-extrabold">[ FULL_NAME ]</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-white/20 py-3 text-body-lg font-mono-technical placeholder:text-white/20 transition-all focus:border-white text-white font-medium font-bold" placeholder="IDENTIFY_ENTITY" type="text"/>
+</div>
+<!-- Email Field -->
+<div class="group">
+<label class="font-label-caps text-label-caps text-on-primary-container block mb-4 uppercase font-bold font-extrabold">[ EMAIL_ADDRESS ]</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-white/20 py-3 text-body-lg font-mono-technical placeholder:text-white/20 transition-all focus:border-white text-white font-medium font-bold" placeholder="VIRTUAL_COORDINATES" type="email"/>
+</div>
+<!-- Project Parameters -->
+<div class="group">
+<label class="font-label-caps text-label-caps text-on-primary-container block mb-4 uppercase font-bold font-extrabold">[ PROJECT_PARAMETERS ]</label>
+<div class="grid grid-cols-2 gap-3">
+<div class="border border-white/10 px-4 py-3 text-center cursor-pointer hover:bg-white hover:text-black transition-colors font-mono-technical text-sm font-bold font-medium">
+                            [ DESIGN_UX ]
+                        </div>
+<div class="border border-white/10 px-4 py-3 text-center cursor-pointer hover:bg-white hover:text-black transition-colors font-mono-technical text-sm font-bold font-medium">
+                            [ AI_INTEG ]
+                        </div>
+</div>
+</div>
+<!-- Message Field -->
+<div class="group">
+<label class="font-label-caps text-label-caps text-on-primary-container block mb-4 uppercase font-bold font-extrabold">[ MESSAGE_INPUT ]</label>
+<textarea class="w-full bg-transparent border-t-0 border-x-0 border-b border-white/20 py-3 text-body-lg font-mono-technical placeholder:text-white/20 transition-all focus:border-white text-white resize-none font-medium font-bold" placeholder="DEFINE_OBJECTIVE" rows="4"></textarea>
+</div>
+</div>
+<!-- Submit Action -->
+<button class="w-full border border-white py-6 flex items-center justify-between px-8 group hover:bg-white transition-all duration-300">
+<span class="font-label-caps text-label-caps tracking-widest text-white group-hover:text-black font-black">SUBMIT_DATA</span>
+<span class="material-symbols-outlined text-white group-hover:text-black transform group-hover:translate-x-2 transition-transform" data-icon="trending_flat">trending_flat</span>
+</button>
+</section>
+<!-- Technical Data / Contact Info -->
+<section class="mt-20 space-y-12 pb-12">
+<div class="flex justify-between items-end border-b border-white/10 pb-4">
+<div>
+<p class="font-label-caps text-[10px] text-white/40 mb-1 font-bold">LOCATION_DATA</p>
+<p class="font-mono-technical text-white font-medium">LOC_BERLIN_HQ</p>
+</div>
+<div class="text-right">
+<p class="font-label-caps text-[10px] text-white/40 mb-1 font-bold">TEMPORAL_MARK</p>
+<p class="font-mono-technical text-white font-medium">CURRENT_TIME_UTC</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-y-6">
+<a class="font-mono-technical text-sm text-white/60 hover:text-white transition-colors flex items-center gap-2 font-medium" href="#">
+<span class="text-[8px]">●</span> INSTAGRAM
+                </a>
+<a class="font-mono-technical text-sm text-white/60 hover:text-white transition-colors flex items-center gap-2 font-medium" href="#">
+<span class="text-[8px]">●</span> LINKEDIN
+                </a>
+<a class="font-mono-technical text-sm text-white/60 hover:text-white transition-colors flex items-center gap-2 font-medium" href="#">
+<span class="text-[8px]">●</span> TWITTER
+                </a>
+<a class="font-mono-technical text-sm text-white/60 hover:text-white transition-colors flex items-center gap-2 font-medium" href="#">
+<span class="text-[8px]">●</span> MANIFESTO
+                </a>
+</div>
+<div class="p-8 border border-dashed border-white/20 flex flex-col items-center justify-center space-y-4">
+<div class="w-full h-32 overflow-hidden relative grayscale">
+<img class="w-full h-full object-cover opacity-50" data-alt="A macro photograph of a liquid metal texture rippling under high-contrast studio lighting, showcasing a sleek, monochromatic machine aesthetic. The surface reflects sharp white lines against a deep black background, creating an abstract, technical, and hyper-modern visual. The mood is cold, sophisticated, and intellectually precise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGUmBUMSDLxwxnsoG37HhbZHd91cWOTgv41vL79Y_O_X7YDnB_ZdGKKmk9eC6YtT8rW4X3aJ_nhloS8We2qz_Umy4s0zanO4iQA1iBqNrsd7OF7sXWFCJ0g16L7enKKN6eV2Ex14SPRB8v56ldCfHHkC38DrN3BF49MJw5wUe95l2f1jR82CCw9usttio17TWZgzYV-2E4nTiSLruE4L7YL0ikis5-rOaZ18GhovNQQEMO196yCV7cDf8U1yLm_pUdXRKl5yMyYpi5"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+</div>
+<p class="text-[10px] font-mono-technical text-white/30 text-center tracking-widest uppercase font-medium">
+                    Protocol_01: Human-to-Machine Bridge Active
+                </p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 w-full z-50 bg-black/90 backdrop-blur-2xl border-t border-white/10 flex justify-around items-center h-20 pb-safe w-full px-8">
+<button class="flex items-center justify-center text-white/30 hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="home_max">home_max</span>
+</button>
+<button class="flex items-center justify-center text-white/30 hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="memory">memory</span>
+</button>
+<button class="flex items-center justify-center text-white/30 hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</button>
+<!-- Mapping Initiate Communication to Contact/Action tab -->
+<button class="flex items-center justify-center text-white scale-110">
+<span class="material-symbols-outlined" data-icon="qr_code_2" style="font-variation-settings: 'FILL' 1;">qr_code_2</span>
+</button>
+</nav>
+<!-- Visual Artifacts -->
+<div class="fixed top-0 left-0 w-[1px] h-full bg-white/5 pointer-events-none"></div>
+<div class="fixed top-0 right-0 w-[1px] h-full bg-white/5 pointer-events-none"></div>
+<div class="fixed top-1/2 left-0 w-full h-[1px] bg-white/5 pointer-events-none"></div>
+</body></html>

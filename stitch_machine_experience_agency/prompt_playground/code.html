@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #000000;
+            color: #e5e2e1;
+            cursor: crosshair;
+        }
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .inner-light {
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for technical look */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #333; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#c6c6c6",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary": "#c6c6c7",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-container": "#000000",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-container": "#454747",
+                        "surface-variant": "#353535",
+                        "surface-dim": "#131313",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-primary-fixed-variant": "#474747",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "tertiary-fixed": "#e2e2e2",
+                        "inverse-on-surface": "#313030",
+                        "primary-container": "#000000",
+                        "primary": "#c6c6c6",
+                        "on-background": "#e5e2e1",
+                        "on-primary": "#303030",
+                        "surface-container-highest": "#353535",
+                        "outline": "#988e90",
+                        "background": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "tertiary": "#c6c6c6",
+                        "on-primary-fixed": "#1b1b1b",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-secondary-container": "#b4b5b5",
+                        "inverse-primary": "#5e5e5e",
+                        "on-secondary": "#2f3131",
+                        "on-primary-container": "#757575",
+                        "surface-bright": "#393939",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#e2e2e2",
+                        "error-container": "#93000a",
+                        "outline-variant": "#4c4546",
+                        "on-tertiary": "#303030",
+                        "on-surface-variant": "#cfc4c5",
+                        "surface-container": "#20201f",
+                        "on-tertiary-container": "#757575",
+                        "primary-fixed": "#e2e2e2",
+                        "surface": "#131313",
+                        "secondary-fixed-dim": "#c6c6c7"
+                    },
+                    "fontFamily": {
+                        "display": ["Inter"],
+                        "mono-technical": ["Space Grotesk"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display": ["80px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "mono-technical": ["13px", {"lineHeight": "1.4", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "body-md": ["15px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 bg-black/40 backdrop-blur-md border-b border-white/10">
+<div class="text-lg font-black tracking-widest text-white uppercase">MX_AGENCY</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="font-inter text-xs tracking-[0.2em] font-light text-white/40 hover:text-white transition-all duration-300" href="#">SERVICES</a>
+<a class="font-inter text-xs tracking-[0.2em] font-light text-white border-b border-white pb-1" href="#">PLAYGROUND</a>
+<a class="font-inter text-xs tracking-[0.2em] font-light text-white/40 hover:text-white transition-all duration-300" href="#">PROCESS</a>
+<a class="font-inter text-xs tracking-[0.2em] font-light text-white/40 hover:text-white transition-all duration-300" href="#">CONTACT</a>
+</nav>
+<button class="px-6 py-2 border border-white text-xs tracking-[0.2em] font-light text-white hover:bg-white hover:text-black transition-all duration-200 ease-out">
+            START_PROJECT
+        </button>
+</header>
+<main class="pt-32 min-h-screen flex flex-col">
+<!-- Hero Section -->
+<section class="px-12 mb-20">
+<div class="flex flex-col md:flex-row justify-between items-end gap-12">
+<div class="max-w-2xl">
+<span class="font-mono-technical text-mono-technical text-primary/60 block mb-4 uppercase">[ LABS_ENVIRONMENT_V.04 ]</span>
+<h1 class="font-display text-display text-white uppercase">Prompt<br/>Playground</h1>
+</div>
+<div class="max-w-xs text-right">
+<p class="font-body-md text-white/60 text-sm leading-relaxed">
+                        Interface for algorithmic design generation. Enter technical parameters to observe machine-led visual synthesis.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Main Workspace: Bento Grid Layout -->
+<section class="px-12 pb-32 flex-grow">
+<div class="grid grid-cols-12 gap-6 h-full min-h-[700px]">
+<!-- Left Control Panel -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<!-- Input Area -->
+<div class="glass-panel inner-light p-8 flex flex-col gap-8 h-full">
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-white/40 uppercase">System Command</span>
+<textarea class="bg-transparent border-b border-white/20 focus:border-white focus:ring-0 text-white font-mono-technical py-4 h-32 resize-none placeholder:text-white/10" placeholder="Describe the architectural logic..."></textarea>
+</div>
+<div class="space-y-6">
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-white/40 uppercase">Parameters</span>
+<div class="flex flex-col gap-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-mono-technical text-[10px] text-white/60">COMPLEXITY</span>
+<span class="font-mono-technical text-[10px] text-white">88%</span>
+</div>
+<div class="h-[1px] w-full bg-white/10 overflow-hidden">
+<div class="h-full bg-white w-[88%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-mono-technical text-[10px] text-white/60">DENSITY</span>
+<span class="font-mono-technical text-[10px] text-white">42%</span>
+</div>
+<div class="h-[1px] w-full bg-white/10 overflow-hidden">
+<div class="h-full bg-white w-[42%]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 border border-white/10 flex flex-col gap-2">
+<span class="font-label-caps text-[10px] text-white/40">VERSION</span>
+<span class="font-mono-technical text-white">MX-992</span>
+</div>
+<div class="p-4 border border-white/10 flex flex-col gap-2">
+<span class="font-label-caps text-[10px] text-white/40">LATENCY</span>
+<span class="font-mono-technical text-white">12ms</span>
+</div>
+</div>
+</div>
+<button class="mt-auto py-5 border border-white bg-white text-black font-label-caps text-sm tracking-[0.2em] hover:bg-black hover:text-white transition-all duration-300">
+                            EXECUTE_SYNTHESIS
+                        </button>
+</div>
+</div>
+<!-- Right Preview Area -->
+<div class="col-span-12 lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Main Preview Large -->
+<div class="md:col-span-2 glass-panel inner-light relative overflow-hidden group h-[500px]">
+<img class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000 grayscale" data-alt="A hyper-realistic 3D rendering of a complex, monolithic glass structure floating in a void of pure black space. The structure is composed of thousands of intersecting translucent planes that catch soft, white studio lighting from above, creating a monochromatic study of transparency and reflection. The aesthetic is extremely minimalist and high-tech, with sharp edges and a cold, intellectual atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT0MsO2IJsuFQiITUpoWAOUtvlTa81saxrn5w-RofST5nI29bGGFCBY27yvUEk9OyNpI0bHoF1MJWoTTsxwpYLlAsZR-UEPiDoJetelHrk7l20MGxoSL2PPBhv-G76lANv2ZcgG5JBGMm9UZPFkrHZl0vyhRqNKA3NQA0hfxDSOnd8Lkpju9qEkbaAUx-KvS1GpZJg1G_77wr0odVZOTyup6ptFbn9OAzHsm7S1NB95UKoBqQ1scIlJ1rItbExfZ_XUzhtg1cY-QF4"/>
+<div class="absolute top-6 left-6 flex items-center gap-4">
+<span class="bg-black/80 px-3 py-1 font-mono-technical text-[10px] border border-white/20">PREVIEW_01</span>
+<span class="font-mono-technical text-[10px] text-white/40">RESOLUTION: 4096 X 4096</span>
+</div>
+<div class="absolute bottom-6 right-6">
+<span class="material-symbols-outlined text-white/40 cursor-pointer hover:text-white">fullscreen</span>
+</div>
+</div>
+<!-- Secondary Visuals -->
+<div class="glass-panel inner-light p-4 aspect-square flex flex-col gap-4 overflow-hidden group">
+<img class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 transition-opacity duration-500" data-alt="A macro photography shot of liquid mercury-like substances forming organic, fluid shapes against a deep charcoal background. The lighting is harsh and directional, reflecting off the metallic surface to create high-contrast highlights and deep shadows. The visual is entirely monochrome, emphasizing the liquid texture and the machine-like precision of the reflections in a dark, moody environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwvGSo1bPNYoErrtDoxS4ocNUkE2QSspR3z-5N7_nK-alPwOWLYWSUiOS-1nc2DIgBS9LbOPwRFh9jGFYw0y9m2JgmMdZp_LudEOC4B-egMskOnFCJVnkUyVxri2bE6xT3EBV2phBoSM53RxE2uqZC69uul7l3LNTsVEx27uTOyB_SIyKorokKnudJ_5JZoZWKZ0T8OfwpDmcuBfyO9L7SxeOAHbiNKH_WuHososlynO6TP6vvgAPNOC5EJ6bQZyuCPZX1Ui2KQPOM"/>
+<div class="flex justify-between items-center px-2">
+<span class="font-mono-technical text-[10px] text-white/40">UI_ITERATION_A</span>
+<span class="font-mono-technical text-[10px] text-white/40">8.2MB</span>
+</div>
+</div>
+<div class="glass-panel inner-light p-4 aspect-square flex flex-col gap-4 overflow-hidden group">
+<img class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 transition-opacity duration-500" data-alt="A dense, intricate grid of illuminated fiber optic cables and circuit traces arranged in a precise, geometric pattern. The scene is shot from an isometric perspective, showing depth through the layering of light and dark gray components. The overall aesthetic is one of extreme technical complexity and cold efficiency, rendered in a strictly black and white palette with subtle glowing edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXmSBApLAeKR9fzECUJ_TzG7kX52hb_FACrjX0yVudIoYcknnYA4ZucicEgrMRwTyM9fPkfu59w4PXs4jXaZbXG33dh6dkQN51KR5DTafrr-XtlZ18sGrgxc1yOL0xBs0cNrA9vVXGbtbZHSN6uE5FwOOQsb6FjvBQadPJtnHqL6JCS7qNUuhKer6O8xu8L4pxJkYmgu4WgTCKZMVMJdDBvoEZPBnl_9gg4m34ZiheG_ZxD9oGYKhUO3VObRL39Rv8IRq5DcMFSpvT"/>
+<div class="flex justify-between items-center px-2">
+<span class="font-mono-technical text-[10px] text-white/40">SYS_ARCHITECTURE</span>
+<span class="font-mono-technical text-[10px] text-white/40">12.4MB</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specs Strip -->
+<section class="border-y border-white/5 py-8 px-12 bg-surface-container-lowest">
+<div class="flex flex-wrap justify-between gap-12">
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-primary/40" style="font-variation-settings: 'opsz' 20;">memory</span>
+<div>
+<p class="font-label-caps text-[10px] text-white/40">GPU_LOAD</p>
+<p class="font-mono-technical text-white">42.8 TFLOPS</p>
+</div>
+</div>
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-primary/40" style="font-variation-settings: 'opsz' 20;">database</span>
+<div>
+<p class="font-label-caps text-[10px] text-white/40">DATA_PROCESSED</p>
+<p class="font-mono-technical text-white">1.2 PB/SEC</p>
+</div>
+</div>
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-primary/40" style="font-variation-settings: 'opsz' 20;">speed</span>
+<div>
+<p class="font-label-caps text-[10px] text-white/40">THREAD_SYNC</p>
+<p class="font-mono-technical text-white">99.998%</p>
+</div>
+</div>
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-primary/40" style="font-variation-settings: 'opsz' 20;">shield</span>
+<div>
+<p class="font-label-caps text-[10px] text-white/40">SYSTEM_AUTH</p>
+<p class="font-mono-technical text-white">ENCRYPTED_AES256</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-black py-20 px-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 w-full">
+<div class="text-sm font-bold text-white uppercase tracking-widest">MACHINE_EXPERIENCE</div>
+<div class="flex gap-12">
+<a class="font-inter text-[10px] tracking-widest uppercase text-white/30 hover:text-white transition-colors" href="#">INSTAGRAM</a>
+<a class="font-inter text-[10px] tracking-widest uppercase text-white/30 hover:text-white transition-colors" href="#">LINKEDIN</a>
+<a class="font-inter text-[10px] tracking-widest uppercase text-white/30 hover:text-white transition-colors" href="#">TWITTER</a>
+</div>
+<div class="font-inter text-[10px] tracking-widest uppercase text-white/30">
+            ©2024 MACHINE_EXPERIENCE. ALL_RIGHTS_RESERVED.
+        </div>
+</footer>
+<!-- Tooltip / Indicator (Asymmetric visual element) -->
+<div class="fixed bottom-12 left-12 flex flex-col gap-2 z-40">
+<div class="w-[1px] h-20 bg-gradient-to-t from-white/40 to-transparent"></div>
+<span class="font-mono-technical text-[10px] text-white/40 [writing-mode:vertical-lr] rotate-180">ACTIVE_SESSION_001</span>
+</div>
+</body></html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#c6c6c6",
+                    "on-tertiary-fixed": "#1b1b1b",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "surface-container-lowest": "#0e0e0e",
+                    "secondary": "#c6c6c7",
+                    "surface-container-low": "#1c1b1b",
+                    "tertiary-container": "#000000",
+                    "surface-container-high": "#2a2a2a",
+                    "secondary-container": "#454747",
+                    "surface-variant": "#353535",
+                    "surface-dim": "#131313",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "inverse-surface": "#e5e2e1",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-primary-fixed-variant": "#474747",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "tertiary-fixed": "#e2e2e2",
+                    "inverse-on-surface": "#313030",
+                    "primary-container": "#000000",
+                    "primary": "#c6c6c6",
+                    "on-background": "#e5e2e1",
+                    "on-primary": "#303030",
+                    "surface-container-highest": "#353535",
+                    "outline": "#988e90",
+                    "background": "#131313",
+                    "on-surface": "#e5e2e1",
+                    "tertiary": "#c6c6c6",
+                    "on-primary-fixed": "#1b1b1b",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#454747",
+                    "on-secondary-container": "#b4b5b5",
+                    "inverse-primary": "#5e5e5e",
+                    "on-secondary": "#2f3131",
+                    "on-primary-container": "#757575",
+                    "surface-bright": "#393939",
+                    "error": "#ffb4ab",
+                    "secondary-fixed": "#e2e2e2",
+                    "error-container": "#93000a",
+                    "outline-variant": "#4c4546",
+                    "on-tertiary": "#303030",
+                    "on-surface-variant": "#cfc4c5",
+                    "surface-container": "#20201f",
+                    "on-tertiary-container": "#757575",
+                    "primary-fixed": "#e2e2e2",
+                    "surface": "#131313",
+                    "secondary-fixed-dim": "#c6c6c7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "margin-page": "64px",
+                    "section-gap": "160px",
+                    "unit": "4px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display": ["Inter"],
+                    "mono-technical": ["Space Grotesk"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-caps": ["Space Grotesk"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "display": ["80px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "mono-technical": ["13px", {"lineHeight": "1.4", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["15px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            color: #e5e2e1;
+            cursor: crosshair;
+        }
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .bento-item:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md bg-background text-on-background">
+<!-- TopNavBar Implementation -->
+<nav class="fixed top-0 full-width flex justify-between items-center px-12 py-6 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/10">
+<div class="text-lg font-black tracking-widest text-white">MX_AGENCY</div>
+<div class="hidden md:flex gap-12">
+<a class="font-inter text-xs tracking-[0.2em] font-light text-white border-b border-white pb-1" href="#">SERVICES</a>
+<a class="font-inter text-xs tracking-[0.2em] font-light text-white/40 hover:text-white transition-all duration-300" href="#">PLAYGROUND</a>
+<a class="font-inter text-xs tracking-[0.2em] font-light text-white/40 hover:text-white transition-all duration-300" href="#">PROCESS</a>
+<a class="font-inter text-xs tracking-[0.2em] font-light text-white/40 hover:text-white transition-all duration-300" href="#">CONTACT</a>
+</div>
+<button class="font-inter text-xs tracking-[0.2em] font-light text-white px-6 py-2 border border-white/20 hover:bg-white hover:text-black transition-all duration-200 ease-out">
+            START_PROJECT
+        </button>
+</nav>
+<main class="pt-40">
+<!-- Hero Section -->
+<header class="px-12 mb-32">
+<div class="flex flex-col md:flex-row justify-between items-end gap-12">
+<div class="max-w-4xl">
+<span class="font-mono-technical text-primary text-xs uppercase tracking-[0.3em] block mb-6">[ SYSTEM_CAPABILITIES_01 ]</span>
+<h1 class="font-display text-display text-white mb-8">COMPUTATIONAL<br/>CREATIVITY.</h1>
+<p class="font-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+                        We deploy advanced algorithmic frameworks to architect the next generation of digital identity. Precise, scalable, and engineered for high-performance outcomes.
+                    </p>
+</div>
+<div class="flex flex-col items-end text-right">
+<div class="h-[1px] w-48 bg-white/20 mb-4"></div>
+<span class="font-mono-technical text-[10px] text-white/40 uppercase tracking-widest">Latency: 14ms</span>
+<span class="font-mono-technical text-[10px] text-white/40 uppercase tracking-widest">Core: MX_OS_V2</span>
+</div>
+</div>
+</header>
+<!-- Bento Grid Services -->
+<section class="px-12 mb-section-gap">
+<div class="grid grid-cols-12 gap-6 auto-rows-[280px]">
+<!-- Service 1: AI Brand Identity -->
+<div class="col-span-12 md:col-span-8 glass-panel p-10 flex flex-col justify-between group bento-item transition-all duration-300">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-caps text-primary">[ MODULE_01 ]</span>
+<h3 class="font-headline-lg text-white mt-4">AI Brand Identity</h3>
+</div>
+<span class="material-symbols-outlined text-4xl text-white/20 group-hover:text-white transition-colors">fingerprint</span>
+</div>
+<div class="flex justify-between items-end">
+<p class="font-body-md text-on-surface-variant max-w-md">Neural-driven visual systems that evolve with your market position. Real-time brand asset generation and consistency monitoring.</p>
+<button class="border border-white/20 px-6 py-2 font-label-caps hover:bg-white hover:text-black transition-all">EXECUTE</button>
+</div>
+</div>
+<!-- Service 2: Prompt Engineering -->
+<div class="col-span-12 md:col-span-4 glass-panel p-10 flex flex-col justify-between group bento-item transition-all duration-300">
+<div>
+<span class="font-label-caps text-primary">[ MODULE_02 ]</span>
+<h3 class="font-headline-md text-white mt-4">Prompt Engineering</h3>
+<p class="font-body-md text-on-surface-variant mt-4">Optimizing the interface between human intent and machine execution.</p>
+</div>
+<div class="mt-8 overflow-hidden rounded border border-white/5 bg-black/50 p-4">
+<div class="flex gap-1 mb-2">
+<div class="w-1 h-1 bg-white/40"></div>
+<div class="w-1 h-1 bg-white/20"></div>
+<div class="w-1 h-1 bg-white/10"></div>
+</div>
+<code class="font-mono-technical text-[10px] text-white/60">SYSTEM: INIT_REFINEMENT...<br/>ITERATION_04: SUCCESS</code>
+</div>
+</div>
+<!-- Service 3: Visual Aesthetic -->
+<div class="col-span-12 md:col-span-4 relative overflow-hidden glass-panel group bento-item transition-all duration-300">
+<img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity grayscale" data-alt="A macro close-up of liquid chrome or molten metal swirling in a dark vacuum, illuminated by a single harsh white light source. The aesthetic is cold, clinical, and high-tech, using a monochrome palette of deep blacks and brilliant metallic whites. The texture is hyper-realistic with sharp highlights and deep shadows, evoking a sense of fluid machine intelligence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkYCLaHzLf4M0IPeTvePcVzlkLzEH-BX4a67rFzdKgYk3ZVCzzV5rydc_dVzLKJUT7_S3ipuFSnmayAVa0hddcbJ0ENjVeAdv6v4bdG-lRJN6jfHyTGJkbBv556QxQtcpxBrJ360q2EKlp-E3yADBhYOvZSVVnmfUEaHTeKs34v8pgynf1gi79bcJpKqogay5DzXw208IQp4Xclwj14W_S_BKbPAGlDHOTdXn2WSE1hTzSHAoDuqDbWq68cEzIuUqTZ9ZTEmyzWTRK"/>
+<div class="relative z-10 p-10 h-full flex flex-col justify-end bg-gradient-to-t from-black to-transparent">
+<span class="font-label-caps text-primary">[ VISUALS ]</span>
+<h3 class="font-headline-md text-white mt-2">Neural Rendering</h3>
+</div>
+</div>
+<!-- Service 4: Generative UI -->
+<div class="col-span-12 md:col-span-8 glass-panel p-10 flex flex-col justify-between group bento-item transition-all duration-300">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-caps text-primary">[ MODULE_03 ]</span>
+<h3 class="font-headline-lg text-white mt-4">Generative UI</h3>
+</div>
+<div class="grid grid-cols-2 gap-1">
+<div class="w-4 h-4 border border-white/20"></div>
+<div class="w-4 h-4 bg-white"></div>
+<div class="w-4 h-4 bg-white/40"></div>
+<div class="w-4 h-4 border border-white/20"></div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-end gap-8">
+<p class="font-body-md text-on-surface-variant max-w-lg">Interfaces that self-assemble based on user behavior and context. We build the logic, the machine builds the view.</p>
+<div class="flex gap-4">
+<span class="font-mono-technical text-[10px] text-white/30">[ REACT ]</span>
+<span class="font-mono-technical text-[10px] text-white/30">[ THREE.JS ]</span>
+<span class="font-mono-technical text-[10px] text-white/30">[ PYTORCH ]</span>
+</div>
+</div>
+</div>
+<!-- Service 5: Data Visualization -->
+<div class="col-span-12 md:col-span-12 glass-panel p-12 flex flex-col md:flex-row gap-12 items-center bento-item transition-all duration-300">
+<div class="flex-1">
+<span class="font-label-caps text-primary">[ MODULE_04 ]</span>
+<h3 class="font-headline-lg text-white mt-4">Cognitive Data Architecture</h3>
+<p class="font-body-lg text-on-surface-variant mt-6 leading-relaxed">Transforming vast data lakes into intuitive, actionable landscapes. We specialize in high-density information design for AI-first enterprises.</p>
+</div>
+<div class="flex-1 w-full h-full min-h-[200px] flex items-end justify-between gap-2 px-8">
+<div class="w-full bg-white/5 h-[40%] hover:bg-white/40 transition-all duration-500"></div>
+<div class="w-full bg-white/10 h-[70%] hover:bg-white/40 transition-all duration-500"></div>
+<div class="w-full bg-white/5 h-[30%] hover:bg-white/40 transition-all duration-500"></div>
+<div class="w-full bg-white/20 h-[90%] hover:bg-white/40 transition-all duration-500"></div>
+<div class="w-full bg-white/10 h-[55%] hover:bg-white/40 transition-all duration-500"></div>
+<div class="w-full bg-white/30 h-[80%] hover:bg-white/40 transition-all duration-500"></div>
+<div class="w-full bg-white/5 h-[45%] hover:bg-white/40 transition-all duration-500"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Process -->
+<section class="px-12 mb-section-gap">
+<div class="border-t border-white/10 pt-20 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div>
+<h4 class="font-label-caps text-white mb-8">01_ANALYSIS</h4>
+<p class="font-mono-technical text-white/40">Deep-dive into existing technical stack and organizational objectives.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-white mb-8">02_PROTOTYPING</h4>
+<p class="font-mono-technical text-white/40">Rapid iteration cycles using generative frameworks and custom LLMs.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-white mb-8">03_DEPLOYMENT</h4>
+<p class="font-mono-technical text-white/40">Seamless integration into production environments with zero downtime.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-white mb-8">04_EVOLUTION</h4>
+<p class="font-mono-technical text-white/40">Continuous monitoring and algorithmic refinement post-launch.</p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-12 py-32 bg-white text-black text-center">
+<h2 class="font-display text-headline-lg md:text-display mb-12">UPGRADE YOUR INTERFACE.</h2>
+<button class="bg-black text-white px-12 py-6 font-label-caps text-sm tracking-[0.2em] hover:bg-black/90 transition-colors">INITIATE_PROTOCOL</button>
+</section>
+</main>
+<!-- Footer Implementation -->
+<footer class="bg-black full-width py-20 px-12 border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 w-full">
+<div class="text-sm font-bold text-white">MX_AGENCY</div>
+<div class="flex gap-12">
+<a class="font-inter text-[10px] tracking-widest uppercase text-white/30 hover:text-white transition-colors" href="#">INSTAGRAM</a>
+<a class="font-inter text-[10px] tracking-widest uppercase text-white/30 hover:text-white transition-colors" href="#">LINKEDIN</a>
+<a class="font-inter text-[10px] tracking-widest uppercase text-white/30 hover:text-white transition-colors" href="#">TWITTER</a>
+</div>
+<div class="font-inter text-[10px] tracking-widest uppercase text-white/30">
+                ©2024 MACHINE_EXPERIENCE. ALL_RIGHTS_RESERVED.
+            </div>
+</div>
+</footer>
+</body></html>
